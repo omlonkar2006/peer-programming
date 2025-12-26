@@ -142,7 +142,7 @@ Explanation:
   
 5 is the largest element in the array.
  
-"""
+
 arr= list(map(int,input().split())) #took array input
 largest=arr[0]  #asssumed that first number is largest
 
@@ -151,3 +151,34 @@ for num in arr:    #checking using for looop
          # ex: if arr[1]>arr[0] then arr[1] will be largest 
         largest=num
 print(largest)
+
+
+Move all Zeros to the end of the array
+
+
+
+7
+
+Problem Statement: You are given an array of integers, your task is to move all the zeros in the array to the end of the array and move non-negative integers to the front by maintaining their order.
+
+Examples
+Input: 1 ,0 ,2 ,3 ,0 ,4 ,0 ,1
+Output: 1 ,2 ,3 ,4 ,1 ,0 ,0 ,0
+Explanation: All the zeros are moved to the end and non-negative integers are moved to front by maintaining order
+
+"""
+n= int(input()) #size of array
+arr=list(map(int,input().split())) #took arry input
+result=[] #will store non-zero elemwent
+zero_count=0 #counts no.of 0
+
+for i in arr:
+    if i !=0:    #if not zero add in result
+        result.append(i)
+    else:
+        zero_count+=1
+
+for i in range(zero_count):  #this will add zeros to end
+    result.append(0)
+print(result)
+
